@@ -31,3 +31,18 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
 document.getElementById('godina').textContent = new Date().getFullYear();
+
+// Javni brojač pregleda stranice. Cloudflare Analytics i dalje pruža precizniju privatnu statistiku.
+const visitorCount = document.getElementById('visitor-count');
+fetch('https://api.counterapi.dev/v1/sake-zajednica/pregledi/up')
+  .then(response => {
+    if (!response.ok) throw new Error('Brojač trenutno nije dostupan.');
+    return response.json();
+  })
+  .then(data => {
+    visitorCount.textContent = new Intl.NumberFormat('bs-BA').format(data.count);
+  })
+  .catch(() => {
+    visitorCount.textContent = '—';
+    visitorCount.closest('.visitor-counter').title = 'Brojač trenutno nije dostupan';
+  });

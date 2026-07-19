@@ -8,3 +8,10 @@
 .logo-placeholder{width:180px;height:180px;border-radius:34px;overflow:hidden;box-shadow:0 14px 45px rgba(0,0,0,.45)}
 .logo-placeholder img{display:block;width:100%;height:100%;object-fit:cover}
 @media(max-width:600px){.logo-placeholder{width:145px;height:145px;border-radius:28px}}
+
+/* Javni brojač pregleda u footeru */
+.footer-brand-group{display:flex;flex-direction:column;align-items:flex-start;gap:9px}
+.visitor-counter{display:flex;align-items:center;gap:6px;padding-left:49px;font-size:10px!important;color:var(--muted);margin:0}
+.visitor-counter strong{color:#dfe3f5;font-weight:700;font-variant-numeric:tabular-nums}
+.visitor-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px rgba(53,217,231,.8)}
+@media(max-width:600px){.footer-brand-group{align-items:center}.visitor-counter{padding-left:0}}

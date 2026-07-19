@@ -31,3 +31,6 @@ Dvaput kliknite `index.html`. Za najbolji pregled koristite Chrome, Edge ili Fir
 - `sake-logo.png` — logotip zajednice
 
 Stranica ne objavljuje komande ni interne tehničke detalje Sake bota.
+
+Cloudflare Web Analytics je uključen za anonimno praćenje posjeta bez reklamnih kolačića.
+Javni brojač pregleda prikazan je u footeru i počinje brojati od trenutka objave ove verzije.
