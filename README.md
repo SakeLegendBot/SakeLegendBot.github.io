@@ -1,12 +1,12 @@
-# Sake Community — GitHub Pages stranica
+# Sake Zajednica — GitHub Pages stranica
 
 Gotova statička web-stranica na bosanskom jeziku. Radi bez baze podataka i dodatnih instalacija.
 
 ## Prije objave
 
 1. Otvorite `index.html` u običnom uređivaču teksta.
-2. Zamijenite sva četiri pojavljivanja `https://discord.gg/VAŠ-POZIV` stvarnim Discord invite linkom.
-3. Privremeni znak **S / VAŠ LOGO** možete ostaviti ili kasnije zamijeniti stvarnim logotipom.
+2. Discord dugmad već koriste službeni pozivni link.
+3. Datoteka `sake-logo.png` je službeni logotip stranice.
 
 ## Objava na GitHub Pages
 
@@ -28,5 +28,6 @@ Dvaput kliknite `index.html`. Za najbolji pregled koristite Chrome, Edge ili Fir
 - `index.html` — sadržaj i struktura
 - `style.css` — kompletan responzivni dizajn
 - `script.js` — mobilni meni, animacije i automatska godina
+- `sake-logo.png` — logotip zajednice
 
 Stranica ne objavljuje komande ni interne tehničke detalje Sake bota.
