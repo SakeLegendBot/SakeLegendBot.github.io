@@ -34,7 +34,7 @@ document.getElementById('godina').textContent = new Date().getFullYear();
 
 // Javni brojač pregleda stranice. Cloudflare Analytics i dalje pruža precizniju privatnu statistiku.
 const visitorCount = document.getElementById('visitor-count');
-fetch('https://api.counterapi.dev/v1/sake-zajednica/pregledi/up')
+fetch('https://api.counterapi.dev/v1/sake-zajednica/pregledi/up', { cache: 'no-store' })
   .then(response => {
     if (!response.ok) throw new Error('Brojač trenutno nije dostupan.');
     return response.json();
