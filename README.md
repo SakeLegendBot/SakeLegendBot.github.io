@@ -29,8 +29,10 @@ Dvaput kliknite `index.html`. Za najbolji pregled koristite Chrome, Edge ili Fir
 - `style.css` — kompletan responzivni dizajn
 - `script.js` — mobilni meni, animacije i automatska godina
 - `sake-logo.png` — logotip zajednice
+- `sake-tactical-hero.png` — originalna taktička hero pozadina
 
 Stranica ne objavljuje komande ni interne tehničke detalje Sake bota.
 
 Cloudflare Web Analytics je uključen za anonimno praćenje posjeta bez reklamnih kolačića.
 Javni brojač pregleda prikazan je u footeru i počinje brojati od trenutka objave ove verzije.
+YouTube kanal je povezan u hero sekciji i footeru.

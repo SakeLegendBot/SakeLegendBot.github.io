@@ -15,3 +15,23 @@
 .visitor-counter strong{color:#dfe3f5;font-weight:700;font-variant-numeric:tabular-nums}
 .visitor-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px rgba(53,217,231,.8)}
 @media(max-width:600px){.footer-brand-group{align-items:center}.visitor-counter{padding-left:0}}
+
+/* Sake Tactical — crno, narandžasto i zlato */
+:root{--bg:#090a0c;--bg-2:#101114;--panel:rgba(20,20,21,.82);--text:#f7f3eb;--muted:#aaa39a;--line:rgba(255,154,45,.16);--purple:#ff7a18;--cyan:#e9b44c;--shadow:0 24px 80px rgba(0,0,0,.55)}
+.ambient-one{background:#ff6a00;opacity:.12}.ambient-two{background:#d49a32;opacity:.1}
+.site-header.scrolled{background:rgba(9,10,12,.88);border-bottom-color:rgba(255,138,31,.17)}
+.hero{isolation:isolate;background:linear-gradient(90deg,rgba(5,6,7,.98) 0%,rgba(5,6,7,.9) 34%,rgba(5,6,7,.32) 68%,rgba(5,6,7,.12) 100%),linear-gradient(0deg,rgba(9,10,12,.92) 0%,transparent 32%),url('sake-tactical-hero.png') 68% center/cover no-repeat;border-bottom:1px solid rgba(255,132,24,.17)}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(255,133,27,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,133,27,.035) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(90deg,transparent 12%,#000 50%,transparent)}
+.hero-grid{grid-template-columns:minmax(0,700px) 1fr}.hero-copy{position:relative;z-index:2}.hero-visual{display:none}
+.eyebrow{color:#f4bd66}.eyebrow span{background:#ff7a18;box-shadow:0 0 10px rgba(255,122,24,.7)}
+h1 em,h2 em{background:linear-gradient(90deg,#ff8a26,#f0c46d);background-clip:text;-webkit-background-clip:text;color:transparent}
+.button{background:linear-gradient(135deg,#ff7a18,#c9500a);box-shadow:0 12px 32px rgba(255,106,0,.24)}.button:hover{box-shadow:0 16px 38px rgba(255,106,0,.38)}
+.button-youtube{background:rgba(18,18,19,.78);border:1px solid rgba(255,255,255,.16);box-shadow:none}.button-youtube span{color:#ff3434}.button-youtube:hover{border-color:#ff3434;box-shadow:0 12px 30px rgba(255,36,36,.15)}
+.trust-row i,.status-pill i{background:#ff8a24;box-shadow:0 0 12px #ff8a24}
+.bot-section{background:linear-gradient(180deg,transparent,rgba(100,48,8,.12),transparent)}
+.feature-card:hover{border-color:rgba(255,132,30,.42);background:rgba(31,25,20,.88)}.feature-icon{background:rgba(255,122,24,.13)}
+.cta-card{background:linear-gradient(135deg,#8d3308,#c6570e 48%,#d79a32)}.cta-card h2 em{background:linear-gradient(90deg,#fff3d5,#ffc165);background-clip:text;-webkit-background-clip:text;color:transparent}
+.visitor-dot{background:#ff8a24;box-shadow:0 0 10px rgba(255,122,24,.9)}
+.footer-links{display:flex;align-items:center;gap:20px}.youtube-link{color:#d2a09c}.youtube-link:hover{color:#ff4d45}
+@media(max-width:900px){.hero{background-position:70% center}.hero-grid{grid-template-columns:1fr}.hero-copy{max-width:680px}}
+@media(max-width:600px){.hero{background-image:linear-gradient(90deg,rgba(5,6,7,.97),rgba(5,6,7,.72)),linear-gradient(0deg,rgba(9,10,12,.96),transparent 45%),url('sake-tactical-hero.png');background-position:72% center}.hero-actions{gap:12px}.button-youtube{width:100%}.footer-links{gap:16px}}
