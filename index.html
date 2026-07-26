@@ -3,19 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sake Zajednica — mjesto za druženje, nova poznanstva i dobru atmosferu, uz vlastiti Sake bot koji pomaže da sve ostane uredno i sigurno.">
+  <meta name="description" content="Sake Zajednica — mjesto za razgovor, druženje i nova poznanstva, uz vlastiti Sake bot i sistem koji pomaže da sve ostane uredno i sigurno.">
   <meta name="theme-color" content="#090a0c">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://sakelegendbot.github.io/">
+
   <meta property="og:title" content="Sake Zajednica — Više od servera">
   <meta property="og:description" content="Uđi zbog razgovora. Ostani zbog ekipe.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="sake-logo.png">
+  <meta property="og:url" content="https://sakelegendbot.github.io/">
+  <meta property="og:image" content="https://sakelegendbot.github.io/sake-logo.png">
+  <meta property="og:image:alt" content="Sake Zajednica — vuk, kruna i zlatni natpis Sake">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sake Zajednica — Više od servera">
+  <meta name="twitter:description" content="Uđi zbog razgovora. Ostani zbog ekipe.">
+  <meta name="twitter:image" content="https://sakelegendbot.github.io/sake-logo.png">
+
   <title>Sake Zajednica — Više od servera</title>
+  <link rel="icon" href="favicon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="favicon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="preload" as="image" href="sake-tactical-hero.webp" type="image/webp">
+  <link rel="stylesheet" href="style.css?v=5">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sake Zajednica",
+    "url": "https://sakelegendbot.github.io/",
+    "logo": "https://sakelegendbot.github.io/sake-logo.png",
+    "sameAs": [
+      "https://www.youtube.com/@Sake_ba",
+      "https://discord.gg/yXfwsWXSf"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <div class="page-progress" aria-hidden="true"><span id="page-progress-bar"></span></div>
   <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
   <div class="ambient ambient-one" aria-hidden="true"></div>
   <div class="ambient ambient-two" aria-hidden="true"></div>
@@ -23,7 +53,7 @@
   <header class="site-header" id="pocetna">
     <div class="container nav-wrap">
       <a class="brand" href="#pocetna" aria-label="Sake Zajednica — početna">
-        <img class="brand-mark" src="sake-logo.png" alt="">
+        <img class="brand-mark" src="sake-logo.webp" alt="" width="40" height="40">
         <span>Sake <b>Zajednica</b></span>
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="glavna-navigacija" aria-label="Otvori meni">
@@ -31,9 +61,10 @@
       </button>
       <nav class="nav" id="glavna-navigacija" aria-label="Glavna navigacija">
         <a href="#zajednica">Zajednica</a>
+        <a href="#iskustvo">Šta te čeka</a>
         <a href="#bot">Sake bot</a>
         <a href="#put">Napredovanje</a>
-        <a href="#vrijednosti">Vrijednosti</a>
+        <a href="#status">Status</a>
         <a href="#faq">FAQ</a>
         <a class="button button-small" href="https://discord.gg/yXfwsWXSf" target="_blank" rel="noopener noreferrer">Pridruži se</a>
       </nav>
@@ -77,12 +108,12 @@
       <div class="container live-stats reveal" aria-label="Status zajednice">
         <article>
           <span class="stat-kicker">Članovi</span>
-          <strong id="member-count">—</strong>
-          <small>ukupno na serveru</small>
+          <strong id="member-count" data-live-number>—</strong>
+          <small>približno na serveru</small>
         </article>
         <article>
           <span class="stat-kicker">Online</span>
-          <strong id="online-count">—</strong>
+          <strong id="online-count" data-live-number>—</strong>
           <small>trenutno dostupni</small>
         </article>
         <article>
@@ -91,10 +122,46 @@
           <small>zajednica je uvijek otvorena</small>
         </article>
         <article>
-          <span class="stat-kicker">Sistem</span>
-          <strong class="status-text"><i></i> Aktivan</strong>
-          <small>Sake bot radi iza scene</small>
+          <span class="stat-kicker">Discord</span>
+          <strong class="status-text" id="discord-status"><i></i> Provjera…</strong>
+          <small id="discord-status-note">povezivanje sa javnim statusom</small>
         </article>
+      </div>
+    </section>
+
+    <section class="section experience-section" id="iskustvo">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow"><span></span> Šta te čeka</p>
+          <h2>Prostor za različite ljude.<br><em>Jedna zajednička atmosfera.</em></h2>
+          <p>Ne pokušavamo svima nametnuti isti način druženja. Dovoljno je da poštuješ druge i doprineseš na svoj način.</p>
+        </div>
+        <div class="experience-grid">
+          <article class="experience-card reveal">
+            <span class="experience-number">01</span>
+            <div class="experience-icon">💬</div>
+            <h3>Opušten razgovor</h3>
+            <p>Mjesto za svakodnevne teme, humor i razgovor bez nepotrebnog pritiska.</p>
+          </article>
+          <article class="experience-card reveal">
+            <span class="experience-number">02</span>
+            <div class="experience-icon">🎮</div>
+            <h3>Gaming i zabava</h3>
+            <p>Pronađi ekipu, podijeli trenutke i uključi se u zajedničke aktivnosti.</p>
+          </article>
+          <article class="experience-card reveal">
+            <span class="experience-number">03</span>
+            <div class="experience-icon">🤝</div>
+            <h3>Pomoć i podrška</h3>
+            <p>Pitaj, podijeli iskustvo i obrati se timu kada ti treba privatna pomoć.</p>
+          </article>
+          <article class="experience-card reveal">
+            <span class="experience-number">04</span>
+            <div class="experience-icon">🎙️</div>
+            <h3>Glasovni kanali</h3>
+            <p>Navrati na razgovor, ostani koliko želiš i upoznaj ljude prirodno.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -153,6 +220,22 @@
       </div>
     </section>
 
+    <section class="section ranks-section" id="rankovi">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow"><span></span> Rankovi zajednice</p>
+          <h2>Svaki nivo nosi ime.<br><em>Ugled se ipak zaslužuje.</em></h2>
+          <p>Level uloge označavaju aktivnost i kontinuitet. Ne daju pravo da se neko postavlja iznad drugih.</p>
+        </div>
+        <div class="rank-track reveal" aria-label="Level rankovi">
+          <article><span class="rank-level">25</span><strong>Baraba</strong><small>Prvi veliki korak</small></article>
+          <article><span class="rank-level">50</span><strong>Radioaktivan</strong><small>Prepoznatljiva aktivnost</small></article>
+          <article><span class="rank-level">100</span><strong>Ljudina</strong><small>Stalan dio zajednice</small></article>
+          <article class="rank-legend"><span class="rank-level">200</span><strong>Legenda</strong><small>Najviši level status</small></article>
+        </div>
+      </div>
+    </section>
+
     <section class="section values" id="vrijednosti">
       <div class="container values-layout">
         <div class="section-heading reveal">
@@ -169,6 +252,31 @@
       </div>
     </section>
 
+    <section class="section status-section" id="status">
+      <div class="container status-layout">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> Javni status</p>
+          <h2>Jasno, jednostavno<br><em>i bez lažnih obećanja.</em></h2>
+          <p>Ovdje prikazujemo samo ono što se može javno i pouzdano provjeriti. Status bota ne izmišljamo kada nemamo direktan tehnički izvor.</p>
+        </div>
+        <div class="status-board reveal">
+          <article>
+            <div><span class="status-dot online"></span><strong>Web stranica</strong></div>
+            <b>Online</b>
+          </article>
+          <article>
+            <div><span class="status-dot" id="discord-dot"></span><strong>Discord pozivnica</strong></div>
+            <b id="discord-board-text">Provjera…</b>
+          </article>
+          <article>
+            <div><span class="status-dot neutral"></span><strong>Sake bot</strong></div>
+            <b>Status na Discordu</b>
+          </article>
+          <p class="status-disclaimer">Javni Discord invite API prikazuje približan broj članova i prisutnih korisnika, ali ne potvrđuje zasebno status bota.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section timeline-section" id="razvoj">
       <div class="container">
         <div class="section-heading reveal">
@@ -179,9 +287,20 @@
           <article><span>Početak</span><h3>Okupljanje zajednice</h3><p>Stvoren je prostor za razgovor, druženje i nova poznanstva.</p></article>
           <article><span>Razvoj</span><h3>Vlastiti sistem uloga</h3><p>Definisani su nivoi, ovlasti i jasan put napredovanja članova.</p></article>
           <article><span>Automatizacija</span><h3>Sake bot</h3><p>Izgrađen je vlastiti bot prilagođen stvarnim potrebama servera.</p></article>
-          <article><span>Danas</span><h3>Nova web prezentacija</h3><p>Sake Zajednica dobija ozbiljan identitet i mjesto izvan Discorda.</p></article>
-          <article class="future"><span>Dalje</span><h3>Sljedeće poglavlje</h3><p>Nove mogućnosti dolaze kada imaju stvarnu vrijednost za članove.</p></article>
+          <article><span>Web v2</span><h3>Ozbiljna prezentacija</h3><p>Sake Zajednica dobila je prepoznatljiv identitet izvan Discorda.</p></article>
+          <article class="future"><span>Web v3</span><h3>Kompletno iskustvo</h3><p>Dodani su rankovi, status, bolja navigacija, brže slike, PWA podrška i tehnička optimizacija.</p></article>
         </div>
+      </div>
+    </section>
+
+    <section class="section release-section" id="novosti">
+      <div class="container release-card reveal">
+        <div>
+          <p class="eyebrow"><span></span> Posljednje unapređenje</p>
+          <h2>Sake web <em>v3.0</em></h2>
+          <p>Nova verzija donosi proširen sadržaj, prikaz rankova, javni status, aktivnu navigaciju, animirane brojače, brže WebP slike, instalaciju kao web aplikaciju i detaljniju optimizaciju za mobilne uređaje.</p>
+        </div>
+        <div class="release-badge"><span>v3.0</span><small>Aktuelna verzija</small></div>
       </div>
     </section>
 
@@ -210,8 +329,12 @@
             <p>Za osjetljive situacije koristi sistem privatne podrške kako bi se moderatorski tim mogao uključiti bez javne rasprave.</p>
           </details>
           <details>
-            <summary>Koje podatke Sake bot prikuplja?<span>+</span></summary>
-            <p>Bot obrađuje samo podatke potrebne za funkcije servera. Interne tehničke pojedinosti i zaštitni sistemi nisu javno izloženi.</p>
+            <summary>Šta Sake bot radi?<span>+</span></summary>
+            <p>Bot pomaže u moderaciji, automatizaciji, level sistemu, podršci, događajima i obavijestima. Komande i interna logika nisu javno objavljeni.</p>
+          </details>
+          <details>
+            <summary>Da li stranica prati posjetioce?<span>+</span></summary>
+            <p>Cloudflare Web Analytics koristi se za anonimnu statistiku bez reklamnih kolačića. Javni brojač pregleda koristi zasebni CounterAPI servis.</p>
           </details>
         </div>
       </div>
@@ -234,17 +357,19 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand-group">
-        <a class="brand" href="#pocetna"><img class="brand-mark" src="sake-logo.png" alt=""><span>Sake <b>Zajednica</b></span></a>
+        <a class="brand" href="#pocetna"><img class="brand-mark" src="sake-logo.webp" alt="" width="40" height="40"><span>Sake <b>Zajednica</b></span></a>
         <p>Mjesto za ljude koji cijene dobru atmosferu, red i osjećaj pripadnosti.</p>
         <p class="visitor-counter" aria-live="polite"><span class="visitor-dot" aria-hidden="true"></span> Pregledi stranice: <strong id="visitor-count">—</strong></p>
       </div>
-      <div class="footer-column"><strong>Navigacija</strong><a href="#zajednica">Zajednica</a><a href="#bot">Sake bot</a><a href="#put">Napredovanje</a><a href="#vrijednosti">Vrijednosti</a></div>
-      <div class="footer-column"><strong>Poveznice</strong><a href="https://discord.gg/yXfwsWXSf" target="_blank" rel="noopener noreferrer">Discord ↗</a><a href="https://www.youtube.com/@Sake_ba" target="_blank" rel="noopener noreferrer">YouTube ↗</a><a href="#faq">Česta pitanja</a></div>
+      <div class="footer-column"><strong>Navigacija</strong><a href="#zajednica">Zajednica</a><a href="#iskustvo">Šta te čeka</a><a href="#bot">Sake bot</a><a href="#put">Napredovanje</a><a href="#status">Status</a></div>
+      <div class="footer-column"><strong>Poveznice</strong><a href="https://discord.gg/yXfwsWXSf" target="_blank" rel="noopener noreferrer">Discord ↗</a><a href="https://www.youtube.com/@Sake_ba" target="_blank" rel="noopener noreferrer">YouTube ↗</a><a href="privacy.html">Privatnost</a><a href="#faq">Česta pitanja</a></div>
     </div>
-    <div class="container footer-bottom"><p>© <span id="godina"></span> Sake Zajednica. Sva prava zadržana.</p><p>Sake web v2.0</p></div>
+    <div class="container footer-bottom"><p>© <span id="godina"></span> Sake Zajednica. Sva prava zadržana.</p><p>Sake web v3.0</p></div>
   </footer>
 
-  <script src="script.js?v=4"></script>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Nazad na vrh">↑</button>
+
+  <script src="script.js?v=5"></script>
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"9c5f7e18ece34b65b502d31fbe0b8e7a"}'></script>
 </body>
 </html>

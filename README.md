@@ -1,26 +1,32 @@
-# Sake Zajednica — web v2.0
+# Sake Zajednica — web v3.0
 
 Kompletna statička web-prezentacija Sake Discord zajednice na bosanskom jeziku.
 
-## Datoteke
+## Šta donosi v3.0
 
-- `index.html` — kompletan sadržaj i struktura stranice
-- `style.css` — responzivni tactical dizajn
-- `script.js` — mobilni meni, animacije, FAQ, Discord statistika i brojač pregleda
-- `sake-logo.png` — službeni logotip
-- `sake-tactical-hero.png` — hero pozadina
+- proširena sekcija „Šta te čeka“
+- pregled level rankova: Baraba, Radioaktivan, Ljudina i Legenda
+- javni status bez izmišljanja statusa bota
+- animirani Discord brojači
+- aktivna navigacija prema trenutnoj sekciji
+- indikator napretka kroz stranicu i dugme za povratak na vrh
+- WebP slike za znatno brže učitavanje
+- PWA manifest i ikone za instalaciju stranice
+- SEO: canonical, Open Graph, Twitter kartice, strukturirani podaci, sitemap i robots.txt
+- posebna stranica privatnosti i prilagođena 404 stranica
+- zadržani Cloudflare Web Analytics i javni brojač pregleda
 
 ## Objavljivanje na GitHub Pages
 
-1. Zamijeni postojeće datoteke u repositoryju novim datotekama iz ovog paketa.
-2. Zadrži sva imena datoteka bez promjene.
-3. Commitaj i pushaj promjene na `main` branch.
-4. GitHub Pages će automatski objaviti novu verziju.
+1. Kopiraj sve datoteke iz ovog paketa u root GitHub repositoryja.
+2. Zamijeni postojeće `index.html`, `style.css`, `script.js` i `README.md`.
+3. Dodaj sve nove datoteke: `privacy.html`, `404.html`, `manifest.webmanifest`, `robots.txt`, `sitemap.xml`, WebP slike i favicon ikone.
+4. Commitaj i pushaj promjene na `main` branch.
+5. GitHub Pages će automatski objaviti novu verziju.
 
 ## Važne napomene
 
-- Discord statistika koristi javni invite API i prikazuje približan broj članova i online korisnika.
-- Ako Discord privremeno ne vrati podatke, stranica prikazuje neutralni rezervni tekst.
+- Discord statistika koristi javni invite API i prikazuje približne vrijednosti.
+- Discord invite API ne potvrđuje status Sake bota. Zato stranica ne tvrdi da je bot online bez direktnog izvora.
 - Sake bot je opisan samo kroz osnovne javne mogućnosti. Komande, interna logika i zaštitni sistemi nisu objavljeni.
-- Cloudflare Web Analytics ostaje uključen.
-- Javni brojač pregleda koristi CounterAPI.
+- Javni brojač pregleda koristi CounterAPI, a Cloudflare Web Analytics anonimnu statistiku posjeta.
