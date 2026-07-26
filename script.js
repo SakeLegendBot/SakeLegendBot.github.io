@@ -108,47 +108,55 @@ const discordDot = document.getElementById('discord-dot');
 memberCount.classList.add('is-loading');
 onlineCount.classList.add('is-loading');
 
-fetch('https://discord.com/api/v10/invites/yXfwsWXSf?with_counts=true', { cache: 'no-store' })
+function setStatus(element, label, stateClass) {
+  const dot = document.createElement('i');
+  dot.setAttribute('aria-hidden', 'true');
+  element.classList.remove('is-online', 'is-offline');
+  element.classList.add(stateClass);
+  element.replaceChildren(dot, document.createTextNode(` ${label}`));
+}
+
+const discordController = new AbortController();
+const discordTimeout = window.setTimeout(() => discordController.abort(), 6000);
+
+fetch('https://discord.com/api/v10/invites/yXfwsWXSf?with_counts=true', {
+  cache: 'no-store',
+  credentials: 'omit',
+  referrerPolicy: 'no-referrer',
+  signal: discordController.signal
+})
   .then(response => {
     if (!response.ok) throw new Error('Discord statistika trenutno nije dostupna.');
+    const type = response.headers.get('content-type') || '';
+    if (!type.includes('application/json')) throw new Error('Neočekivan odgovor Discord servisa.');
     return response.json();
   })
   .then(data => {
-    const members = Number(data.approximate_member_count ?? 0);
-    const online = Number(data.approximate_presence_count ?? 0);
+    window.clearTimeout(discordTimeout);
+    const members = Number(data.approximate_member_count);
+    const online = Number(data.approximate_presence_count);
+    if (!Number.isSafeInteger(members) || members < 0 || members > 100000000 ||
+        !Number.isSafeInteger(online) || online < 0 || online > 100000000) {
+      throw new Error('Nevažeći statistički podaci.');
+    }
     memberCount.classList.remove('is-loading');
     onlineCount.classList.remove('is-loading');
     animateNumber(memberCount, members);
     animateNumber(onlineCount, online);
-    discordStatus.classList.add('is-online');
-    discordStatus.innerHTML = '<i></i> Dostupan';
+    setStatus(discordStatus, 'Dostupan', 'is-online');
     discordStatusNote.textContent = 'javna pozivnica je aktivna';
     discordBoardText.textContent = 'Dostupna';
     discordDot.classList.add('online');
   })
   .catch(() => {
+    window.clearTimeout(discordTimeout);
     memberCount.classList.remove('is-loading');
     onlineCount.classList.remove('is-loading');
     memberCount.textContent = 'Aktivno';
     onlineCount.textContent = '24/7';
-    discordStatus.classList.add('is-offline');
-    discordStatus.innerHTML = '<i></i> Nedostupno';
+    setStatus(discordStatus, 'Nedostupno', 'is-offline');
     discordStatusNote.textContent = 'javna provjera trenutno nije uspjela';
     discordBoardText.textContent = 'Provjera nije uspjela';
     discordDot.classList.add('offline');
   });
 
-const visitorCount = document.getElementById('visitor-count');
-fetch('https://api.counterapi.dev/v1/sake-zajednica/pregledi/up', { cache: 'no-store' })
-  .then(response => {
-    if (!response.ok) throw new Error('Brojač trenutno nije dostupan.');
-    return response.json();
-  })
-  .then(data => {
-    const count = Number(data.count);
-    visitorCount.textContent = Number.isFinite(count) ? numberFormat.format(count) : '—';
-  })
-  .catch(() => {
-    visitorCount.textContent = '—';
-    visitorCount.closest('.visitor-counter').title = 'Brojač trenutno nije dostupan';
-  });

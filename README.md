@@ -1,4 +1,4 @@
-# Sake Zajednica — web v3.0
+# Sake Zajednica — web v3.1 Security
 
 Kompletna statička web-prezentacija Sake Discord zajednice na bosanskom jeziku.
 
@@ -30,3 +30,14 @@ Kompletna statička web-prezentacija Sake Discord zajednice na bosanskom jeziku.
 - Discord invite API ne potvrđuje status Sake bota. Zato stranica ne tvrdi da je bot online bez direktnog izvora.
 - Sake bot je opisan samo kroz osnovne javne mogućnosti. Komande, interna logika i zaštitni sistemi nisu objavljeni.
 - Javni brojač pregleda koristi CounterAPI, a Cloudflare Web Analytics anonimnu statistiku posjeta.
+
+## Sigurnosno ojačanje v3.1
+
+- Content Security Policy na svim HTML stranicama
+- uklonjeni Google Fonts i CounterAPI radi manje vanjskih zavisnosti
+- uklonjeno dinamičko ubacivanje HTML-a u JavaScriptu
+- Discord odgovor se provjerava, vremenski ograničava i obrađuje kao tekst
+- dodani Referrer Policy, `.gitignore`, `.nojekyll` i `SECURITY.md`
+- inline CSS premješten u `style.css` kako bi CSP mogao blokirati inline stilove
+
+Cloudflare Web Analytics je jedina vanjska JavaScript zavisnost. Za apsolutno najmanju supply-chain površinu ukloniti njegov `<script>` iz `index.html` i iz CSP-a ukloniti Cloudflare domene.

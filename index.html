@@ -7,6 +7,8 @@
   <meta name="theme-color" content="#090a0c">
   <meta name="color-scheme" content="dark">
   <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; script-src 'self' 'sha256-wZdEnEyEj/gXsvfFyhl1RMPd0OQwE3xfHhXyqs8bdkM=' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src https://discord.com https://cloudflareinsights.com; manifest-src 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://sakelegendbot.github.io/">
 
   <meta property="og:title" content="Sake Zajednica — Više od servera">
@@ -24,11 +26,8 @@
   <link rel="icon" href="favicon-192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="favicon-192.png">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="sake-tactical-hero.webp" type="image/webp">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 
   <script type="application/ld+json">
   {
@@ -359,7 +358,6 @@
       <div class="footer-brand-group">
         <a class="brand" href="#pocetna"><img class="brand-mark" src="sake-logo.webp" alt="" width="40" height="40"><span>Sake <b>Zajednica</b></span></a>
         <p>Mjesto za ljude koji cijene dobru atmosferu, red i osjećaj pripadnosti.</p>
-        <p class="visitor-counter" aria-live="polite"><span class="visitor-dot" aria-hidden="true"></span> Pregledi stranice: <strong id="visitor-count">—</strong></p>
       </div>
       <div class="footer-column"><strong>Navigacija</strong><a href="#zajednica">Zajednica</a><a href="#iskustvo">Šta te čeka</a><a href="#bot">Sake bot</a><a href="#put">Napredovanje</a><a href="#status">Status</a></div>
       <div class="footer-column"><strong>Poveznice</strong><a href="https://discord.gg/yXfwsWXSf" target="_blank" rel="noopener noreferrer">Discord ↗</a><a href="https://www.youtube.com/@Sake_ba" target="_blank" rel="noopener noreferrer">YouTube ↗</a><a href="privacy.html">Privatnost</a><a href="#faq">Česta pitanja</a></div>
@@ -369,7 +367,7 @@
 
   <button class="back-to-top" id="back-to-top" type="button" aria-label="Nazad na vrh">↑</button>
 
-  <script src="script.js?v=5"></script>
-  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"9c5f7e18ece34b65b502d31fbe0b8e7a"}'></script>
+  <script src="script.js?v=6"></script>
+  <script type="module" crossorigin="anonymous" referrerpolicy="no-referrer" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"9c5f7e18ece34b65b502d31fbe0b8e7a"}'></script>
 </body>
 </html>
