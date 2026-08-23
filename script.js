@@ -152,11 +152,10 @@ fetch('https://discord.com/api/v10/invites/yXfwsWXSf?with_counts=true', {
     window.clearTimeout(discordTimeout);
     memberCount.classList.remove('is-loading');
     onlineCount.classList.remove('is-loading');
-    memberCount.textContent = 'Aktivno';
-    onlineCount.textContent = '24/7';
+    memberCount.textContent = '—';
+    onlineCount.textContent = '—';
     setStatus(discordStatus, 'Nedostupno', 'is-offline');
     discordStatusNote.textContent = 'javna provjera trenutno nije uspjela';
     discordBoardText.textContent = 'Provjera nije uspjela';
     discordDot.classList.add('offline');
   });
-

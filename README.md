@@ -2,7 +2,7 @@
 
 Kompletna statička web-prezentacija Sake Discord zajednice na bosanskom jeziku.
 
-## Šta donosi v3.0
+## Šta donosi v3.1
 
 - proširena sekcija „Šta te čeka“
 - pregled level rankova: Baraba, Radioaktivan, Ljudina i Legenda
@@ -14,7 +14,9 @@ Kompletna statička web-prezentacija Sake Discord zajednice na bosanskom jeziku.
 - PWA manifest i ikone za instalaciju stranice
 - SEO: canonical, Open Graph, Twitter kartice, strukturirani podaci, sitemap i robots.txt
 - posebna stranica privatnosti i prilagođena 404 stranica
-- zadržani Cloudflare Web Analytics i javni brojač pregleda
+- jasniji prikaz V26 mogućnosti i vrijednosti zajednice
+- najava privatnog Sake Control Centra kao sljedeće faze razvoja
+- Cloudflare Web Analytics za osnovnu anonimnu statistiku posjeta
 
 ## Objavljivanje na GitHub Pages
 
@@ -29,7 +31,7 @@ Kompletna statička web-prezentacija Sake Discord zajednice na bosanskom jeziku.
 - Discord statistika koristi javni invite API i prikazuje približne vrijednosti.
 - Discord invite API ne potvrđuje status Sake bota. Zato stranica ne tvrdi da je bot online bez direktnog izvora.
 - Sake bot je opisan samo kroz osnovne javne mogućnosti. Komande, interna logika i zaštitni sistemi nisu objavljeni.
-- Javni brojač pregleda koristi CounterAPI, a Cloudflare Web Analytics anonimnu statistiku posjeta.
+- Cloudflare Web Analytics koristi se za osnovnu anonimnu statistiku posjeta.
 
 ## Sigurnosno ojačanje v3.1
 
