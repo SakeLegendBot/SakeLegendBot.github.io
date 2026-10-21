@@ -1,0 +1,16 @@
+AMIDŽINA STRANICA — DODAVANJE BEZ PREPISIVANJA STARE STRANICE
+
+1. Raspakuj ZIP. Unutra je folder amidza.
+2. U repozitoriju SakeLegendBot/SakeLegendBot.github.io otvori Add file → Upload files.
+3. Prevuci CIJELI FOLDER amidza u prozor za upload. Nemoj ući u folder i prevući samo njegov sadržaj.
+4. Prije commita svi fajlovi moraju imati prefiks amidza/, npr. amidza/index.html i amidza/privacy.html. Ako prikazuje samo index.html, odustani od tog uploada i prevuci cijeli folder.
+5. Commit changes: Dodaj Amidžinu informativnu stranicu i politiku privatnosti.
+6. Sačekaj uspješnu GitHub Pages objavu. Ako postojeća Pages konfiguracija objavljuje korijen main grane, očekivane adrese su:
+   https://sakelegendbot.github.io/amidza/
+   https://sakelegendbot.github.io/amidza/privacy.html
+   https://sakelegendbot.github.io/amidza/terms.html
+   Ako objava koristi drugi izvor, prvo provjeri Settings → Pages.
+7. Tek nakon provjere da adrese javno rade unesemo ih u Google Branding. Objavljivanje stranice ne garantuje Google odobrenje.
+
+Ne mijenjaj postojeće fajlove u korijenu. Ne dodaj botov kod, .env ili pristupne podatke. Ako folder amidza već postoji, prvo provjeri njegov sadržaj.
+Ovaj ZIP namjerno sadrži folder amidza da se postojeća stranica ne prepiše. To je paket web-stranice, a ne novi deploy bota.
